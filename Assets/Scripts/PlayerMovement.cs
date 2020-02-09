@@ -54,8 +54,9 @@ public class PlayerMovement : MonoBehaviour
         collisionDisableTimer -= 0.5f * Time.deltaTime;
         print(collisionDisableTimer);
 
+        //Check collision once timer has run out
         if(collisionDisableTimer <= 0)
-        {
+        {  
             Physics.IgnoreLayerCollision(8, 9, false);
             print("Are collisions between 8 and 9 being ignored?   " + Physics.GetIgnoreLayerCollision(8, 9));
 
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         //Check for a match with the specified name on any GameObject that collides with your GameObject
         if (collision.gameObject.layer == 9)
         {
+            //Turn off collisions between object and player layer.
             Physics.IgnoreLayerCollision(8, 9, true);
             print("Are collisions between 8 and 9 being ignored?   " + Physics.GetIgnoreLayerCollision(8, 9));
             
