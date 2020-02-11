@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         //Check collision once timer has run out
         if(collisionDisableTimer <= 0)
         {  
-            Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, false);
+            //Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, false);
             print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
 
         }
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 9)
         {
             //Turn off collisions between object and player layer.
-            Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, true);
+            //Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, true);
             print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
             
 
