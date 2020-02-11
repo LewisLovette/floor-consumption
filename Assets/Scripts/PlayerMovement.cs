@@ -60,13 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
         //Acts as timer to check collision so it turns it on every x seconds to check for a new collision
         collisionDisableTimer -= 1f * Time.deltaTime;
-        print(collisionDisableTimer);
+        //print(collisionDisableTimer);
 
         //Check collision once timer has run out
         if(collisionDisableTimer <= 0)
         {  
             //Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, false);
-            print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
+            //print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
 
         }
     }
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //Turn off collisions between object and player layer.
             //Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, true);
-            print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
+            //print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
             
 
             collisionDisableTimer = disableTime;

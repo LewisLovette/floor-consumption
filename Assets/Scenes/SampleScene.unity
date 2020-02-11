@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 686111016}
   - component: {fileID: 686111015}
   - component: {fileID: 686111014}
+  - component: {fileID: 686111013}
   m_Layer: 11
   m_Name: Ghost
   m_TagString: Ghost
@@ -389,6 +390,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &686111013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686111012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.2637944, y: 0.00039982796, z: 6.6973667}
+  m_Center: {x: -0.5204222, y: 1.0001999, z: -0.087314606}
 --- !u!64 &686111014
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -398,7 +412,7 @@ MeshCollider:
   m_GameObject: {fileID: 686111012}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -2629,7 +2643,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-15882
+  m_Name: pb_Mesh16688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2818,7 +2832,7 @@ MeshCollider:
   m_GameObject: {fileID: 1335107012}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -4966,7 +4980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 8
-  gravity: 20
+  gravity: 1
 --- !u!65 &1335107020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4976,7 +4990,7 @@ BoxCollider:
   m_GameObject: {fileID: 1335107012}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.5, y: 0.00039982796, z: 5.14}
   m_Center: {x: -0.5204222, y: 1.0001999, z: -0.087314606}
@@ -5445,7 +5459,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16710
+  m_Name: pb_Mesh16716
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

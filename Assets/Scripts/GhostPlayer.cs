@@ -18,4 +18,10 @@ public class GhostPlayer : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print("Box collider collision");
+    }
+
 }
