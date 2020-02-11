@@ -14,18 +14,26 @@ public class PlayerMovement : MonoBehaviour
     private float collisionDisableTimer = 0;
     private Vector3 moveDirection = Vector3.zero;
 
+    private int layerIgnorTo = 9;
+    private int layerIgnorFrom = 10;
+
+    private GameObject ghost;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
 
         //so doesn't move when colliding. Box collider acts as trigger
-        characterController.detectCollisions = false;   
-        //Physics.IgnoreLayerCollision(7, 10, false);
+        characterController.detectCollisions = false;
+
+        ghost = GameObject.FindGameObjectWithTag("Ghost");
 
     }
 
     void Update()
     {
+        //ghost player to follow player
+        ghost.transform.position = this.transform.position;
 
         if (characterController.isGrounded)
         {
@@ -51,14 +59,14 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Acts as timer to check collision so it turns it on every x seconds to check for a new collision
-        collisionDisableTimer -= 0.5f * Time.deltaTime;
+        collisionDisableTimer -= 1f * Time.deltaTime;
         print(collisionDisableTimer);
 
         //Check collision once timer has run out
         if(collisionDisableTimer <= 0)
         {  
-            Physics.IgnoreLayerCollision(8, 9, false);
-            print("Are collisions between 8 and 9 being ignored?   " + Physics.GetIgnoreLayerCollision(8, 9));
+            Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, false);
+            print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
 
         }
     }
@@ -70,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == 9)
         {
             //Turn off collisions between object and player layer.
-            Physics.IgnoreLayerCollision(8, 9, true);
-            print("Are collisions between 8 and 9 being ignored?   " + Physics.GetIgnoreLayerCollision(8, 9));
+            Physics.IgnoreLayerCollision(layerIgnorTo, layerIgnorFrom, true);
+            print("Are collisions between " + layerIgnorTo + " and " + layerIgnorFrom + " being ignored?   " + Physics.GetIgnoreLayerCollision(layerIgnorTo, layerIgnorFrom));
             
 
             collisionDisableTimer = disableTime;
