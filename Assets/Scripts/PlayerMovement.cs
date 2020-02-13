@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float disableTime = 5;
     private float collisionDisableTimer = 0;
     private Vector3 moveDirection = Vector3.zero;
+    //private Vector3 moveDirection = Vector3.zero;
 
     private int layerIgnorTo = 9;
     private int layerIgnorFrom = 10;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         ghost = GameObject.FindGameObjectWithTag("Ghost");
 
     }
+
 
     void Update()
     {
